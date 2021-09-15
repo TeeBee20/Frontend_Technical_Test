@@ -31,4 +31,10 @@ module('Integration | Component | add-movie-form', function (hooks) {
       .dom('.form-description')
       .hasAttribute('placeholder', 'Description..');
   });
+
+  test('title and description inputs are required', async function (assert) {
+    await render(hbs`<AddMovieForm />`);
+
+    assert.dom('input[type="text"]').isRequired();
+  });
 });
