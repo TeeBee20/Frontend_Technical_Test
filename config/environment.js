@@ -24,7 +24,13 @@ module.exports = function (environment) {
   };
 
   ENV.firebase = {
-    // add firebase config here
+    apiKey: 'AIzaSyArQbvJ4Gw1aXxCIWhM_qcIfJ-EF_-hh_g',
+    authDomain: 'cwms-tech-test.firebaseapp.com',
+    projectId: 'cwms-tech-test',
+    storageBucket: 'cwms-tech-test.appspot.com',
+    messagingSenderId: '906423604073',
+    appId: '1:906423604073:web:ee81fe55fee70c371263f8',
+    measurementId: 'G-0CVGR1BZ0B',
   };
 
   if (environment === 'test') {
