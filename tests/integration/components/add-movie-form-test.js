@@ -8,5 +8,7 @@ module('Integration | Component | add-movie-form', function (hooks) {
 
   test('title label has correct text', async function (assert) {
     await render(hbs`<AddMovieForm />`);
+
+    assert.dom('.form-label-title').hasText('Title');
   });
 });
