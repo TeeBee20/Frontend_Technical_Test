@@ -23,4 +23,12 @@ module('Integration | Component | add-movie-form', function (hooks) {
 
     assert.dom('.form-title').hasAttribute('placeholder', 'Title..');
   });
+
+  test('description input has correct placeholder', async function (assert) {
+    await render(hbs`<AddMovieForm />`);
+
+    assert
+      .dom('.form-description')
+      .hasAttribute('placeholder', 'Description..');
+  });
 });
