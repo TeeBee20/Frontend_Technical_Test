@@ -37,4 +37,16 @@ module('Integration | Component | add-movie-form', function (hooks) {
 
     assert.dom('input[type="text"]').isRequired();
   });
+
+  test('rating label has correct text', async function (assert) {
+    await render(hbs`<AddMovieForm />`);
+
+    assert.dom('.form-label-rating').hasText('Rating');
+  });
+
+  test('rating input has correct placeholder', async function (assert) {
+    await render(hbs`<AddMovieForm />`);
+
+    assert.dom('.form-rating').hasAttribute('placeholder', 'Rating..');
+  });
 });
