@@ -39,9 +39,9 @@
       {{#if this.movie.rating}}
         <p>Rating: {{this.movie.rating}}</p>
       {{/if}}
+      <button type='button' {{on 'click' this.editMovie}}>Edit</button>
+      <button type='button' {{on 'click' this.deleteMovie}}>Delete</button>
     {{/if}}
 
-    <button type='button' {{on 'click' this.editMovie}}>Edit</button>
-    <button type='button' {{on 'click' this.deleteMovie}}>Delete</button>
   </div>
 </li>
