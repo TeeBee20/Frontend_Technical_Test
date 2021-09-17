@@ -32,12 +32,6 @@ module('Integration | Component | add-movie-form', function (hooks) {
       .hasAttribute('placeholder', 'Description..');
   });
 
-  test('title and description inputs are required', async function (assert) {
-    await render(hbs`<AddMovieForm />`);
-
-    assert.dom('input[type="text"]').isRequired();
-  });
-
   test('rating label has correct text', async function (assert) {
     await render(hbs`<AddMovieForm />`);
 
@@ -49,4 +43,10 @@ module('Integration | Component | add-movie-form', function (hooks) {
 
     assert.dom('.form-rating').hasAttribute('placeholder', 'Rating..');
   });
+});
+
+test('title, description and rating inputs are required', async function (assert) {
+  await render(hbs`<AddMovieForm />`);
+
+  assert.dom('input[type="text"]').isRequired();
 });
