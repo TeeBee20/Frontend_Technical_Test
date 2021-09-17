@@ -26,6 +26,21 @@ export default class MovieListItem extends Component {
     this.isEditing = !this.isEditing;
   }
 
+  @action async submitMovieEdit(event) {
+    event.preventDefault();
+
+    const { newTitle, newDescription, newRating } = this;
+
+    // uses user input to update doc
+    await updateDoc(this.args.movie.ref, {
+      title: newTitle,
+      description: newDescription,
+      rating: newRating,
+    });
+
+    this.args.loadMovies();
+  }
+
   @action async deleteMovie() {
     //deletes selected doc and invokes loadMovies method to update displayed list
     await deleteDoc(this.args.movie.ref);
