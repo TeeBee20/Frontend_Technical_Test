@@ -21,7 +21,14 @@
     />
   </label>
 
-  <AddRating />
+  <label class='form-label-rating'>Rating
+    <Input
+      @type='text'
+      class='form-rating'
+      placeholder='Rating..'
+      required={{true}}
+    />
+  </label>
 
   {{#if this.errorMessage}}
     <div class='error-message'>
