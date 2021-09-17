@@ -22,8 +22,8 @@ export default class MovieListItem extends Component {
     return movieDataRef;
   }
 
-  @action async editMovie() {
-    this.isEditing = true;
+  @action toggleIsEditing() {
+    this.isEditing = !this.isEditing;
   }
 
   @action async deleteMovie() {

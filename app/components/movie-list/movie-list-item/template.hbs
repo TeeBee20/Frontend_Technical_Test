@@ -26,7 +26,11 @@
             placeholder='Rating..'
           />
         </label>
-        <button type='button'>Cancel</button>
+
+        <button
+          type='button'
+          {{on 'click' this.toggleIsEditing}}
+        >Cancel</button>
         <button type='submit'>Save</button>
       </form>
     {{else}}
@@ -41,7 +45,8 @@
       {{#if this.movie.rating}}
         <p>Rating: {{this.movie.rating}}</p>
       {{/if}}
-      <button type='button' {{on 'click' this.editMovie}}>Edit</button>
+
+      <button type='button' {{on 'click' this.toggleIsEditing}}>Edit</button>
       <button type='button' {{on 'click' this.deleteMovie}}>Delete</button>
     {{/if}}
   </div>
