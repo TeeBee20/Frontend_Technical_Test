@@ -41,7 +41,8 @@
       {{/if}}
     {{/if}}
 
-    <button type='button' {{on 'click' this.editMovie}}>Edit</button>
+    <button type='button' {{on 'click' this.editMovie}}>
+      {{if this.isEditing 'Save' 'Edit'}}</button>
     <button type='button' {{on 'click' this.deleteMovie}}>Delete</button>
   </div>
 </li>
