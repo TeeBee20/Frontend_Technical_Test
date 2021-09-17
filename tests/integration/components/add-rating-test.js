@@ -6,21 +6,9 @@ import { hbs } from 'ember-cli-htmlbars';
 module('Integration | Component | add-rating', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function (assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
-
+  test('rating header has correct text', async function (assert) {
     await render(hbs`<AddRating />`);
 
-    assert.dom(this.element).hasText('');
-
-    // Template block usage:
-    await render(hbs`
-      <AddRating>
-        template block text
-      </AddRating>
-    `);
-
-    assert.dom(this.element).hasText('template block text');
+    assert.dom('h4').hasText('Rating');
   });
 });
