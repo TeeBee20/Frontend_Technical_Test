@@ -9,6 +9,12 @@ export default class MovieListItem extends Component {
 
   @tracked isEditing = false;
 
+  @tracked newTitle = this.movie.title;
+
+  @tracked newDescription = this.movie.description;
+
+  @tracked newRating = this.movie.rating;
+
   get movie() {
     // adds ref property on movie in order to access doc ref property for edit & delete feature
     const movieDataRef = this.args.movie.data();
@@ -17,8 +23,7 @@ export default class MovieListItem extends Component {
   }
 
   @action async editMovie() {
-    this.isEditing = !this.isEditing;
-    // await updateDoc(this.args.movie.ref);
+    this.isEditing = true;
   }
 
   @action async deleteMovie() {
