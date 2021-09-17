@@ -1,6 +1,7 @@
 import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
-import { deleteDoc } from 'firebase/firestore';
+import { deleteDoc, updateDoc } from 'firebase/firestore';
 import podNames from 'ember-component-css/pod-names';
 
 export default class MovieListItem extends Component {
@@ -13,6 +14,11 @@ export default class MovieListItem extends Component {
     const movieDataRef = this.args.movie.data();
     movieDataRef.ref = this.args.movie.ref;
     return movieDataRef;
+  }
+
+  @action async editMovie() {
+    this.isEditing = !this.isEditing;
+    // await updateDoc(this.args.movie.ref);
   }
 
   @action async deleteMovie() {
