@@ -3,34 +3,30 @@
 <li class={{this.styleNamespace}}>
   <div class='details'>
     {{#if this.isEditing}}
-      <label>
-        Title
-        <Input
-          @type='text'
-          @value={{get this.movie 'title'}}
-          placeholder='Title..'
-        />
-      </label>
+      <form>
+        <label>
+          Title
+          <Input @type='text' @value={{this.newTitle}} placeholder='Title..' />
+        </label>
 
-      <label>
-        Description
-        <Input
-          @type='text'
-          @value={{get this.movie 'description'}}
-          placeholder='Description..'
-        />
-      </label>
+        <label>
+          Description
+          <Input
+            @type='text'
+            @value={{this.newDescription}}
+            placeholder='Description..'
+          />
+        </label>
 
-      {{!-- {{#if this.movie.rating}} --}}
-      <label>
-        Rating
-        <Input
-          @type='text'
-          @value={{get this.movie 'rating'}}
-          placeholder='Rating..'
-        />
-      </label>
-      {{!-- {{/if}} --}}
+        <label>
+          Rating
+          <Input
+            @type='text'
+            @value={{this.newRating}}
+            placeholder='Rating..'
+          />
+        </label>
+      </form>
     {{else}}
       <h2>
         {{this.movie.title}}
