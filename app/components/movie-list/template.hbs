@@ -1,6 +1,7 @@
 <ul class={{this.styleNamespace}}>
   {{#each @movies as |movie|}}
-    <MovieList::MovieListItem @movie={{movie}} />
+    {{! using @ for load movies since passed from parent }}
+    <MovieList::MovieListItem @movie={{movie}} @loadMovies={{@loadMovies}} />
 
     <hr />
   {{/each}}
