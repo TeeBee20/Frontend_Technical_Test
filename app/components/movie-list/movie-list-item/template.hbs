@@ -2,19 +2,46 @@
 
 <li class={{this.styleNamespace}}>
   <div class='details'>
-    <h2>
-      {{this.movie.title}}
-    </h2>
+    {{#if this.isEditing}}
+      <label>
+        Title
+        <Input @type='text' @value={{this.movie.title}} placeholder='Title..' />
+      </label>
 
-    <p>
-      {{this.movie.description}}
-    </p>
+      <label>
+        Description
+        <Input
+          @type='text'
+          @value={{this.movie.description}}
+          placeholder='Description..'
+        />
+      </label>
 
-    {{#if this.movie.rating}}
-      <p>Rating: {{this.movie.rating}}</p>
+      {{#if this.movie.rating}}
+        <label>
+          Rating
+          <Input
+            @type='text'
+            @value={{this.movie.rating}}
+            placeholder='Rating..'
+          />
+        </label>
+      {{/if}}
+    {{else}}
+      <h2>
+        {{this.movie.title}}
+      </h2>
+
+      <p>
+        {{this.movie.description}}
+      </p>
+
+      {{#if this.movie.rating}}
+        <p>Rating: {{this.movie.rating}}</p>
+      {{/if}}
     {{/if}}
 
-    <button type='button'>Edit</button>
+    <button type='button' {{on 'click' this.editMovie}}>Edit</button>
     <button type='button' {{on 'click' this.deleteMovie}}>Delete</button>
   </div>
 </li>
