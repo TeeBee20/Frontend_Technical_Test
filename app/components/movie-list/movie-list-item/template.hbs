@@ -5,28 +5,32 @@
     {{#if this.isEditing}}
       <label>
         Title
-        <Input @type='text' @value={{this.movie.title}} placeholder='Title..' />
+        <Input
+          @type='text'
+          @value={{get this.movie 'title'}}
+          placeholder='Title..'
+        />
       </label>
 
       <label>
         Description
         <Input
           @type='text'
-          @value={{this.movie.description}}
+          @value={{get this.movie 'description'}}
           placeholder='Description..'
         />
       </label>
 
-      {{#if this.movie.rating}}
-        <label>
-          Rating
-          <Input
-            @type='text'
-            @value={{this.movie.rating}}
-            placeholder='Rating..'
-          />
-        </label>
-      {{/if}}
+      {{!-- {{#if this.movie.rating}} --}}
+      <label>
+        Rating
+        <Input
+          @type='text'
+          @value={{get this.movie 'rating'}}
+          placeholder='Rating..'
+        />
+      </label>
+      {{!-- {{/if}} --}}
     {{else}}
       <h2>
         {{this.movie.title}}
@@ -41,8 +45,7 @@
       {{/if}}
     {{/if}}
 
-    <button type='button' {{on 'click' this.editMovie}}>
-      {{if this.isEditing 'Save' 'Edit'}}</button>
+    <button type='button' {{on 'click' this.editMovie}}>Edit</button>
     <button type='button' {{on 'click' this.deleteMovie}}>Delete</button>
   </div>
 </li>
