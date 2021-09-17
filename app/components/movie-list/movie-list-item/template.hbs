@@ -7,5 +7,9 @@
     <p>
       {{this.movie.description}}
     </p>
+
+    {{#if this.movie.rating}}
+      <p>Rating: {{this.movie.rating}}</p>
+    {{/if}}
   </div>
 </li>
