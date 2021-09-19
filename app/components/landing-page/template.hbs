@@ -1,6 +1,31 @@
 <div class={{this.styleNamespace}}>
   <MovieListHeader />
 
+  <div>
+    <h3>Sort By Rating</h3>
+    <label>
+      <Input
+        @type='radio'
+        id='asc'
+        name='sort'
+        @value='asc'
+        {{on 'input' this.sortMoviesByRating}}
+      />
+      Ascending
+    </label>
+
+    <label>
+      <Input
+        @type='radio'
+        id='desc'
+        name='sort'
+        @value='desc'
+        {{on 'input' this.sortMoviesByRating}}
+      />
+      Descending
+    </label>
+  </div>
+
   <MovieList @movies={{this.movies}} @loadMovies={{this.loadMovies}} />
 
   <AddMovieForm @loadMovies={{this.loadMovies}} />
