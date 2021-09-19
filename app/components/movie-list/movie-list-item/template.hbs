@@ -1,9 +1,8 @@
 {{! add tests to ensure all info there? }}
-
 <li class={{this.styleNamespace}}>
   <div class='details'>
     {{#if this.isEditing}}
-      <form>
+      <form {{on 'submit' this.submitMovieEdit}}>
         <label>
           Title
           <Input @type='text' @value={{this.newTitle}} placeholder='Title..' />
