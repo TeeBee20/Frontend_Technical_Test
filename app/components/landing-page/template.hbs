@@ -1,7 +1,7 @@
 <div class={{this.styleNamespace}}>
   <MovieListHeader />
 
-  <div>
+  <div class='rating-sort'>
     <h3>Sort By Rating</h3>
     <label>
       <Input
@@ -25,6 +25,8 @@
       Descending
     </label>
   </div>
+
+  <hr />
 
   <MovieList @movies={{this.movies}} @loadMovies={{this.loadMovies}} />
 
