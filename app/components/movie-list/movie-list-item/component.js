@@ -26,6 +26,10 @@ export default class MovieListItem extends Component {
     this.isEditing = !this.isEditing;
   }
 
+  @action editMovieRating(event) {
+    this.newRating = event.target.value;
+  }
+
   @action async submitMovieEdit(event) {
     event.preventDefault();
 
