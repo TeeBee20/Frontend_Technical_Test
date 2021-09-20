@@ -67,6 +67,12 @@
           <label for='star5'>★</label>
         </div>
 
+        {{#if this.errorMessage}}
+          <div class='error-message'>
+            {{this.errorMessage}}
+          </div>
+        {{/if}}
+
         <button
           type='button'
           {{on 'click' this.toggleIsEditing}}
@@ -84,6 +90,12 @@
 
       {{#if this.movie.rating}}
         <p>★: {{this.movie.rating}}</p>
+      {{/if}}
+
+      {{#if this.errorMessage}}
+        <div class='error-message'>
+          {{this.errorMessage}}
+        </div>
       {{/if}}
 
       <button type='button' {{on 'click' this.toggleIsEditing}}>Edit</button>
