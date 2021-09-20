@@ -17,6 +17,8 @@ export default class LandingPage extends Component {
 
   @tracked sortOrder;
 
+  @tracked isLoading = true;
+
   @action sortMoviesByRating(event) {
     this.sortOrder = event.target.value;
     this.loadMovies();
@@ -28,28 +30,27 @@ export default class LandingPage extends Component {
     const moviesSnapshot = await getDocs(moviesRef);
     const movies = [];
 
-    if (this.sortOrder === 'asc') {
-      //query that orders by rating asc
-      const q = query(moviesRef, orderBy('rating'));
-      const querySnapshot = await getDocs(q);
+    //if sort order has been chosen, conditional logic carries out correct orderBy query
+    if (this.sortOrder) {
+      let q;
 
-      querySnapshot.forEach((doc) => {
-        movies.push(doc);
-      });
-    } else if (this.sortOrder === 'desc') {
-      //query that orders by rating desc
-      const q = query(moviesRef, orderBy('rating', 'desc'));
-      const querySnapshot = await getDocs(q);
+      if (this.sortOrder === 'asc') {
+        q = query(moviesRef, orderBy('rating'));
+      } else {
+        q = query(moviesRef, orderBy('rating', 'desc'));
+      }
 
+      const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
         movies.push(doc);
       });
     } else {
-      //default behavior that displays movies when no order chosen
+      //default behavior if no sort order chosen
       moviesSnapshot.forEach((doc) => movies.push(doc));
     }
 
     this.movies = movies;
+    this.isLoading = false;
   }
 
   constructor(owner, args) {
