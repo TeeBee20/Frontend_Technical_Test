@@ -5,14 +5,12 @@
 
   .rating-sort {
     display: flex;
-    flex-direction: column;
     justify-content: justify;
-    align-items: justify;
-    margin-bottom: 2em;
+    align-items: center;
   }
 
   .rating-sort h3 {
     color: #e91c50;
-    margin: 0.5em;
+    margin-right: 0.5em;
   }
 }
