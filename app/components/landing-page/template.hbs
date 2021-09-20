@@ -28,7 +28,7 @@
 
   <hr />
 
-  {{#if isLoading}}
+  {{#if this.isLoading}}
     <h2>Loading Movies...</h2>
   {{else}}
     <MovieList @movies={{this.movies}} @loadMovies={{this.loadMovies}} />
