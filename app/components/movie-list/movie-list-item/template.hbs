@@ -16,14 +16,59 @@
           />
         </label>
 
-        <label>
+        <div class='rate'>
+          <h4>Rating</h4>
+          <p>★: {{this.newRating}}</p>
+          <Input
+            @type='radio'
+            id='star1'
+            name='rate'
+            @value='1'
+            {{on 'input' this.addRating}}
+          />
+          <label for='star1'>★</label>
+          <Input
+            @type='radio'
+            id='star2'
+            name='rate'
+            @value='2'
+            {{on 'input' this.addRating}}
+          />
+          <label for='star2'>★</label>
+          <Input
+            @type='radio'
+            id='star3'
+            name='rate'
+            @value='3'
+            {{on 'input' this.addRating}}
+          />
+          <label for='star3'>★</label>
+          <Input
+            @type='radio'
+            id='star4'
+            name='rate'
+            @value='4'
+            {{on 'input' this.addRating}}
+          />
+          <label for='star4'>★</label>
+          <Input
+            @type='radio'
+            id='star5'
+            name='rate'
+            @value='5'
+            {{on 'input' this.addRating}}
+          />
+          <label for='star5'>★</label>
+        </div>
+
+        {{!-- <label>
           Rating
           <Input
             @type='text'
             @value={{this.newRating}}
             placeholder='Rating..'
           />
-        </label>
+        </label> --}}
 
         <button
           type='button'
