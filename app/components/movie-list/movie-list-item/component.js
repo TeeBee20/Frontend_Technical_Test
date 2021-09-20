@@ -15,6 +15,8 @@ export default class MovieListItem extends Component {
 
   @tracked newRating = this.movie.rating;
 
+  @tracked errorMessage;
+
   get movie() {
     // adds ref property on movie in order to access doc ref property for edit & delete feature
     const movieDataRef = this.args.movie.data();
@@ -33,21 +35,33 @@ export default class MovieListItem extends Component {
   @action async submitMovieEdit(event) {
     event.preventDefault();
 
-    const { newTitle, newDescription, newRating } = this;
+    this.errorMessage = undefined;
 
-    // uses user input to update doc
-    await updateDoc(this.args.movie.ref, {
-      title: newTitle,
-      description: newDescription,
-      rating: newRating,
-    });
+    try {
+      const { newTitle, newDescription, newRating } = this;
 
-    this.args.loadMovies();
+      // uses user input to update doc
+      await updateDoc(this.args.movie.ref, {
+        title: newTitle,
+        description: newDescription,
+        rating: newRating,
+      });
+
+      this.args.loadMovies();
+    } catch (error) {
+      this.errorMessage = error?.message;
+    }
   }
 
   @action async deleteMovie() {
-    //deletes selected doc and invokes loadMovies method to update displayed list
-    await deleteDoc(this.args.movie.ref);
-    this.args.loadMovies();
+    this.errorMessage = undefined;
+
+    try {
+      //deletes selected doc and invokes loadMovies method to update displayed list
+      await deleteDoc(this.args.movie.ref);
+      this.args.loadMovies();
+    } catch (error) {
+      this.errorMessage = error?.message;
+    }
   }
 }
