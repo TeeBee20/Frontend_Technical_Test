@@ -4,7 +4,12 @@
       <form {{on 'submit' this.submitMovieEdit}}>
         <label>
           Title
-          <Input @type='text' @value={{this.newTitle}} placeholder='Title..' />
+          <Input
+            @type='text'
+            @value={{this.newTitle}}
+            placeholder='Title..'
+            required={{true}}
+          />
         </label>
 
         <label>
@@ -13,6 +18,7 @@
             @type='text'
             @value={{this.newDescription}}
             placeholder='Description..'
+            required={{true}}
           />
         </label>
 
