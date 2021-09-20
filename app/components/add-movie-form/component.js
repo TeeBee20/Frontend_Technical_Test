@@ -15,6 +15,11 @@ export default class AddMovieForm extends Component {
 
   @tracked errorMessage;
 
+  @action addRating(event) {
+    this.rating = event.target.value;
+    console.log(this.rating);
+  }
+
   @action async addMovie(event) {
     event.preventDefault();
 
