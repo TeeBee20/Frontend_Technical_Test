@@ -17,7 +17,6 @@ export default class AddMovieForm extends Component {
 
   @action addRating(event) {
     this.rating = event.target.value;
-    console.log(this.rating);
   }
 
   @action async addMovie(event) {
