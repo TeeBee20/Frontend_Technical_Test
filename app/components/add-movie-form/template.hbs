@@ -4,7 +4,7 @@
     <Input
       @type='text'
       @value={{this.title}}
-      class='form-title'
+      class={{if this.title 'text-in-field' 'form-title'}}
       placeholder='Title..'
       required={{true}}
     />
@@ -15,21 +15,25 @@
     <Input
       @type='text'
       @value={{this.description}}
-      class='form-description'
+      class={{if this.description 'text-in-field' 'form-description'}}
       placeholder='Description..'
       required={{true}}
     />
   </label>
 
-  <label class='form-label-rating'>Rating
-    <Input
-      @type='text'
-      @value={{this.rating}}
-      class='form-rating'
-      placeholder='Rating..'
-      required={{true}}
-    />
-  </label>
+  <div class='rate'>
+    <h4>Rating</h4>
+    <input type='radio' id='star5' name='rate' value='5' />
+    <label for='star5' title='text'>★</label>
+    <input type='radio' id='star4' name='rate' value='4' />
+    <label for='star4' title='text'>★</label>
+    <input type='radio' id='star3' name='rate' value='3' />
+    <label for='star3' title='text'>★</label>
+    <input type='radio' id='star2' name='rate' value='2' />
+    <label for='star2' title='text'>★</label>
+    <input type='radio' id='star1' name='rate' value='1' />
+    <label for='star1' title='text'>★</label>
+  </div>
 
   {{#if this.errorMessage}}
     <div class='error-message'>
