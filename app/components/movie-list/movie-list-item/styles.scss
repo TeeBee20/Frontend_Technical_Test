@@ -19,11 +19,19 @@
       border: 0.2rem solid #cccccc;
       border-radius: 0.5rem;
     }
+
+    button {
+      margin-top: 0.5em;
+    }
   }
 
   .rate {
-    padding: 0;
+    padding-bottom: 1em;
     pointer-events: none;
+
+    p {
+      margin: 0.2em 0;
+    }
   }
 
   .rate h4 {
@@ -37,7 +45,8 @@
   .rate label {
     padding: 0;
     margin: 0;
-    display: inline-block;
+    display: inline;
+    float: left;
     color: lightgray;
     overflow: hidden;
     white-space: nowrap;
