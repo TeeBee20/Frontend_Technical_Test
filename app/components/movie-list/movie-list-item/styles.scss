@@ -20,4 +20,48 @@
       border-radius: 0.5rem;
     }
   }
+
+  .rate {
+    padding: 0;
+    pointer-events: none;
+  }
+
+  .rate h4 {
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+    font-weight: lighter;
+  }
+
+  .rate label {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    color: lightgray;
+    overflow: hidden;
+    white-space: nowrap;
+    pointer-events: auto;
+    font-size: 1.5em;
+  }
+
+  .rate input {
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  .rate:not(:checked):hover > label:hover,
+  .rate:not(:checked):hover > label {
+    color: gold;
+  }
+
+  .rate:not(:checked) > label:hover,
+  .rate:not(:checked) > label:hover ~ label {
+    color: lightgrey;
+  }
+
+  .rate > input:checked + label,
+  .rate > label:not(input:checked ~ label) {
+    color: gold;
+  }
 }
