@@ -56,4 +56,50 @@
       background-color: darken(#e91c50, 10%);
     }
   }
+
+  .text-in-field {
+    border-color: green;
+  }
+
+  .rate {
+    padding: 0;
+    pointer-events: none;
+  }
+
+  .rate label {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    color: lightgray;
+  }
+
+  .rate input {
+    visibility: hidden;
+  }
+
+  .rate:not(:checked) > input {
+    margin: 0;
+  }
+
+  .rate:not(:checked) > label {
+    width: 2em;
+    white-space: nowrap;
+    overflow: hidden;
+    pointer-events: all;
+  }
+
+  .rate:not(:checked):hover > label:hover,
+  .rate:not(:checked):hover > label {
+    color: gold;
+  }
+
+  .rate:not(:checked) > label:hover,
+  .rate:not(:checked) > label:hover ~ label {
+    color: lightgrey;
+  }
+
+  .rate > input:checked + label,
+  .rate > label:not(input:checked ~ label) {
+    color: gold;
+  }
 }
