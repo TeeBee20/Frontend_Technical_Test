@@ -28,7 +28,11 @@
 
   <hr />
 
-  <MovieList @movies={{this.movies}} @loadMovies={{this.loadMovies}} />
+  {{#if isLoading}}
+    <h2>Loading Movies...</h2>
+  {{else}}
+    <MovieList @movies={{this.movies}} @loadMovies={{this.loadMovies}} />
+  {{/if}}
 
   <AddMovieForm @loadMovies={{this.loadMovies}} />
 </div>
