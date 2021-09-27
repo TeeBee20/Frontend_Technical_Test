@@ -32,10 +32,10 @@ module('Integration | Component | add-movie-form', function (hooks) {
       .hasAttribute('placeholder', 'Description..');
   });
 
-  test('rating label has correct text', async function (assert) {
+  test('rating header has correct text', async function (assert) {
     await render(hbs`<AddMovieForm />`);
 
-    assert.dom('.form-label-rating').hasText('Rating');
+    assert.dom('h4').hasText('Rating');
   });
 
   test('rating input has correct placeholder', async function (assert) {
