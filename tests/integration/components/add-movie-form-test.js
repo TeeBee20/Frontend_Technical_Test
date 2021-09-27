@@ -37,10 +37,10 @@ module('Integration | Component | add-movie-form', function (hooks) {
 
     assert.dom('h4').hasText('Rating');
   });
-});
 
-test('title, description and rating inputs are required', async function (assert) {
-  await render(hbs`<AddMovieForm />`);
+  test('title and description inputs are required', async function (assert) {
+    await render(hbs`<AddMovieForm />`);
 
-  assert.dom('input[type="text"]').isRequired();
+    assert.dom('input[type="text"]').isRequired();
+  });
 });
