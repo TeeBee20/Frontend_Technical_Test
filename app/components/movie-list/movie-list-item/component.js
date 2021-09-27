@@ -18,9 +18,7 @@ export default class MovieListItem extends Component {
   @tracked errorMessage;
 
   get movie() {
-    // adds ref property on movie in order to access doc ref property for edit & delete feature
     const movieDataRef = this.args.movie.data();
-    movieDataRef.ref = this.args.movie.ref;
     return movieDataRef;
   }
 
